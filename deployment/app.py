@@ -33,13 +33,13 @@ scaler_meta = joblib.load(hf_hub_download(repo_id=HF_REPO, filename="scaler_meta
 # Load features
 feature_columns = joblib.load(hf_hub_download(repo_id=HF_REPO, filename="selected_features.pkl"))
 
-# --- Attack labels for decoding predictions ---
+# Attack labels for decoding predictions
 attack_labels = {
     0: "Normal", 1: "Analysis", 2: "Backdoor", 3: "DoS", 4: "Exploits",
     5: "Fuzzers", 6: "Generic", 7: "Reconnaissance", 8: "Shellcode", 9: "Worms"
 }
 
-# --- Initialize ensemble predictor ---
+# Initialize ensemble predictor
 ensemble = EnsemblePredictor(
     base_models=[dt, et, rf],
     meta_model=meta_model,
@@ -47,10 +47,10 @@ ensemble = EnsemblePredictor(
     voting='soft'
 )
 
-# --- API Key Authentication ---
+# API Key Authentication
 API_KEY = os.getenv("API_KEY", "default-key")
 
-# --- Input Schema (Pydantic) ---
+# Input Schema
 class PredictionInput(BaseModel):
     sttl: float
     smean: float
@@ -120,3 +120,4 @@ def predict(data: PredictionInput, api_key: str = Header(...)):
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=7860)
+
