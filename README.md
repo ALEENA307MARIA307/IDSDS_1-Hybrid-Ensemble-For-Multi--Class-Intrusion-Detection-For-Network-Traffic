@@ -32,5 +32,12 @@ The dataset is **not included** in this repository. You can download it from the
 
 ---
 
+## Model Registry
+
+The trained model artifacts are hosted on the Hugging Face Hub:
+[https://huggingface.co/ALEENA307MARIA307/IDSDS_1](https://huggingface.co/ALEENA307MARIA307/IDSDS_1)
+
+These models are automatically loaded in the deployment via the `huggingface_hub` API.
+
 
 
