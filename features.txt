@@ -1,0 +1,127 @@
+Column, Dtype, and Description
+
+dur — float64
+Duration of the network flow in seconds.
+
+proto — object
+Protocol used (e.g., tcp, udp, icmp).
+
+service — object
+Application service on the destination (e.g., http, dns, ftp).
+
+state — object
+Connection state flag showing how the flow ended (e.g., FIN, CON, INT).
+
+spkts — int64
+Number of packets sent from source to destination.
+
+dpkts — int64
+Number of packets sent from destination to source.
+
+sbytes — int64
+Total bytes sent from source to destination.
+
+dbytes — int64
+Total bytes sent from destination to source.
+
+rate — float64
+Packet rate of the flow (packets per second).
+
+sttl — int64
+Source-to-destination Time-To-Live value.
+
+dttl — int64
+Destination-to-source Time-To-Live value.
+
+sload — float64
+Source bits per second.
+
+dload — float64
+Destination bits per second.
+
+sloss — int64
+Number of packets lost from source.
+
+dloss — int64
+Number of packets lost from destination.
+
+sinpkt — float64
+Average time between incoming packets from source.
+
+dinpkt — float64
+Average time between incoming packets from destination.
+
+sjit — float64
+Source jitter (variation in packet timing).
+
+djit — float64
+Destination jitter.
+
+swin — int64
+Source TCP window size.
+
+stcpb — int64
+Source TCP base sequence number.
+
+dtcpb — int64
+Destination TCP base sequence number.
+
+dwin — int64
+Destination TCP window size.
+
+tcprtt — float64
+TCP round-trip time.
+
+synack — float64
+Time between SYN and SYN-ACK.
+
+ackdat — float64
+Time between ACK and data packet.
+
+smean — int64
+Mean packet size sent from source.
+
+dmean — int64
+Mean packet size sent from destination.
+
+trans_depth — int64
+Depth of HTTP request pipeline.
+
+response_body_len — int64
+HTTP response body size.
+
+ct_srv_src — int64
+Count of connections with same service to the same source.
+
+ct_state_ttl — int64
+Count of flows with same state and TTL values.
+
+ct_dst_ltm — int64
+Number of connections to same destination in last time window.
+
+ct_src_dport_ltm — int64
+Connections from same source to same destination port in last time window.
+
+ct_dst_sport_ltm — int64
+Connections to same destination from same source port in last time window.
+
+ct_dst_src_ltm — int64
+Connections between same source/destination pair.
+
+is_ftp_login — int64
+Indicates FTP login success (0 = No, 1 = Yes).
+
+ct_ftp_cmd — int64
+Number of FTP commands used.
+
+ct_flw_http_mthd — int64
+Number of HTTP methods in the flow.
+
+ct_src_ltm — int64
+Number of recent connections from the same source.
+
+ct_srv_dst — int64
+Number of connections using same service to same destination.
+
+is_sm_ips_ports — int64
+Indicates whether source/destination IP and ports are identical.
