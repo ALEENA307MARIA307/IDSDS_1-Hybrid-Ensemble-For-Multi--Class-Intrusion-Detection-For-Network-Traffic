@@ -5,7 +5,7 @@ This project implements a **hybrid ensemble model** for multi-class intrusion de
 The model combines:
 
 - A **blending ensemble** of base models: Decision Tree, Extra Trees, Random Forest  
-- Individual classifiers: **XGBoost**, **LightGBM**, **Logistic regression** and **SVM**  
+- Individual classifiers: **XGBoost**, **LightGBM**, **Logistic regression**  
 - A **soft voting mechanism** to produce final predictions
 
 The model leverages predicted probabilities from base models to train the blender and optimize final decisions.
