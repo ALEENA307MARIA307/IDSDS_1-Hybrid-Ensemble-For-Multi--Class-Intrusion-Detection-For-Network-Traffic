@@ -14,19 +14,22 @@ app = FastAPI(
 )
 
 
-import os
+from huggingface_hub import hf_hub_download
 import joblib
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-MODEL_DIR = os.path.join(BASE_DIR, "../models")
 
-dt = joblib.load(os.path.join(MODEL_DIR, "dt1.pkl"))
-et = joblib.load(os.path.join(MODEL_DIR, "et1.pkl"))
-rf = joblib.load(os.path.join(MODEL_DIR, "rf1.pkl"))
-xg = joblib.load(os.path.join(MODEL_DIR, "xgb.pkl"))
-lr = joblib.load(os.path.join(MODEL_DIR, "lg.pkl"))
-lg = joblib.load(os.path.join(MODEL_DIR, "lgb.pkl"))
-meta_model = joblib.load(os.path.join(MODEL_DIR, "meta_model.pkl"))
+HF_REPO = "ALEENA307MARIA307/IDSDS_1"
+
+# Load models directly from the Hub
+dt = joblib.load(hf_hub_download(repo_id=HF_REPO, filename="dt1.pkl"))
+et = joblib.load(hf_hub_download(repo_id=HF_REPO, filename="et1.pkl"))
+rf = joblib.load(hf_hub_download(repo_id=HF_REPO, filename="rf1.pkl"))
+xg = joblib.load(hf_hub_download(repo_id=HF_REPO, filename="xgb.pkl"))
+lr = joblib.load(hf_hub_download(repo_id=HF_REPO, filename="lg.pkl"))
+lg = joblib.load(hf_hub_download(repo_id=HF_REPO, filename="lgb.pkl"))
+meta_model = joblib.load(hf_hub_download(repo_id=HF_REPO, filename="meta_model.pkl"))
+feature_columns = joblib.load(hf_hub_download(repo_id=HF_REPO, filename="selected_features.pkl"))
+
 
 
 attack_labels = {
@@ -97,3 +100,4 @@ def predict(data: PredictionInput, api_key: str = Header(...)):
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=7860)
+
