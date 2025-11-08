@@ -1,6 +1,5 @@
 # Ignore datasets and temporary files
 *.zip
-*.pkl
 *.xlsx
 *.csv
 
