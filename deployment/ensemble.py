@@ -14,7 +14,7 @@ class EnsemblePredictor:
         base_probs = np.hstack([m.predict_proba(X_m) for m in self.base_models])
         
         # Meta model predicts based on base_probs
-        meta_prob = self.meta_model.predict_proba(base_probs)[:, 1]
+        meta_prob = self.meta_model.predict_proba(base_probs)
 
         if self.voting == 'soft':
             # Blending models predict on X
@@ -28,3 +28,4 @@ class EnsemblePredictor:
             return (final_probs >= 0.5).astype(int)
         else:
             return (meta_prob >= 0.5).astype(int)
+
