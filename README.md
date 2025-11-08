@@ -57,26 +57,27 @@ The model expects the following input features:
 
 | Feature Name       | Type  | Description |
 |-------------------|-------|-------------|
-| sttl               | float |             |
-| smean              | float |             |
-| ct_dst_src_ltm     | float |             |
-| ct_state_ttl       | float |             |
-| ct_srv_src         | float |             |
-| sload              | float |             |
-| tcprtt             | float |             |
-| dmean              | float |             |
-| service            | float |             |
-| rate               | float |             |
-| dload              | float |             |
-| dinpkt             | float |             |
-| dttl               | float |             |
-| dur                | float |             |
-| sjit               | float |             |
-| sinpkt             | float |             |
-| djit               | float |             |
-| dpkts              | float |             |
-| ct_dst_ltm         | float |             |
-| spkts              | float |             |
+| sttl               | float | Source-to-destination **TTL** (time-to-live) value of the packet. |
+| smean              | float | Mean packet **size from the source**. |
+| ct_dst_src_ltm     | float | Count of connections from **source to destination in the last time window**. |
+| ct_state_ttl       | float | Count of connections in a specific **state with similar TTL**. |
+| ct_srv_src         | float | Count of connections to the **same service from the same source**. |
+| sload              | float | Source **load**, i.e., total bytes sent by source over a time window. |
+| tcprtt             | float | **Round-trip time** of TCP packets between source and destination. |
+| dmean              | float | Mean packet **size from the destination**. |
+| service            | float | Encoded **service type** (e.g., HTTP, FTP, DNS). |
+| rate               | float | Rate of **packets per second** from the source. |
+| dload              | float | Destination **load**, i.e., total bytes received by destination. |
+| dinpkt             | float | Number of **incoming packets** to the destination. |
+| dttl               | float | Destination packet **TTL** (time-to-live). |
+| dur                | float | Duration of the connection/session. |
+| sjit               | float | **Jitter of the source** packets (variation in packet arrival time). |
+| sinpkt             | float | Number of **incoming packets** from the source. |
+| djit               | float | **Jitter of the destination** packets. |
+| dpkts              | float | Total number of packets sent by the destination. |
+| ct_dst_ltm         | float | Count of connections to the **destination in the last time window**. |
+| spkts              | float | Total number of packets sent by the source. |
+
 
 >  Make sure your input JSON matches these features when using the `/predict` endpoint.
 
