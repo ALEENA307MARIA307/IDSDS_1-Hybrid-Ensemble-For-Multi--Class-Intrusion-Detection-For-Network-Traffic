@@ -39,5 +39,46 @@ The trained model artifacts are hosted on the Hugging Face Hub:
 
 These models are automatically loaded in the deployment via the `huggingface_hub` API.
 
+---
 
+## Live Demo
+
+You can try the model live here:
+
+[Try the live Space](https://ALEENA307MARIA307-IDSDS_1.hf.space)
+
+Visit `/docs` on the Space URL to see the interactive API documentation.
+
+---
+
+## Features Accepted
+
+The model expects the following input features:
+
+| Feature Name       | Type  | Description |
+|-------------------|-------|-------------|
+| sttl               | float |             |
+| smean              | float |             |
+| ct_dst_src_ltm     | float |             |
+| ct_state_ttl       | float |             |
+| ct_srv_src         | float |             |
+| sload              | float |             |
+| tcprtt             | float |             |
+| dmean              | float |             |
+| service            | float |             |
+| rate               | float |             |
+| dload              | float |             |
+| dinpkt             | float |             |
+| dttl               | float |             |
+| dur                | float |             |
+| sjit               | float |             |
+| sinpkt             | float |             |
+| djit               | float |             |
+| dpkts              | float |             |
+| ct_dst_ltm         | float |             |
+| spkts              | float |             |
+
+>  Make sure your input JSON matches these features when using the `/predict` endpoint.
+
+---
 
