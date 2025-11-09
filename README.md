@@ -1,7 +1,7 @@
 # Hybrid Ensemble for Multi-Class Intrusion Detection in Network Flows
 
 Try the live model here:  
-[**Live Demo Space**](https://aleena307maria307-idsds-1.hf.space)  
+[**Live Demo Space**](https://aleena307maria307-idsds-1.hf.space/)  
 
 
 ---
